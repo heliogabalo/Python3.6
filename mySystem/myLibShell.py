@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #/*
-# * gitInit.py
+# * myLibShell.py
 # * This file is part of libtool-izator-starter?
 # *
 # * Copyright (C) 2024 - Raul Vilchez Ruiz
