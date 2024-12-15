@@ -6,12 +6,17 @@ import gitInit as git
 
 
 def setup_directories(source, bak, dest, bak_src, bak_test, pathtests, pathsrc):
-	'''Sets up the necessary directories and copies initial files.'''
+	'''Sets up the necessary directories and copies initial files.
+		 Use the "comented in" calls, to set up the example_build initialy,
+		 once done, you can keep running this script to restart a new example
+		 template. Do the 'local' changes in example_build to get a baseline
+		 of starting project.
+	'''
 	# Ensures destination and backup directories are prepared
 	sh.change_to_dir(dest)
-	sh.remove_directory(bak)
+	#sh.remove_directory(bak)
 	sh.remove_directory(dest)
-	sh.copy_recursive(source, bak)
+	#sh.copy_recursive(source, bak)
 	
 	# Create required directories
 	sh.create_directory(pathtests)
@@ -76,7 +81,7 @@ def main():
 
 		# Initialize Git and commit
 		initialize_git_repo(dest)
-		initialize_git_repo(bak)
+		#initialize_git_repo(bak)
 
 		# Display final message
 		displays_final_message()
