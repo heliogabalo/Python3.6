@@ -60,24 +60,31 @@ def displays_final_message():
 	
 	
 def main():
-	# Define paths
-	source = '/usr/share/doc/check-devel-0.9.9/example'
-	bak = '/tmp/example'
-	bak_src = '/tmp/example/src'
-	bak_test = '/tmp/example/tests'
-	dest = '/tmp/myExample'
-	pathtests = '/tmp/myExample/tests'
-	pathsrc = '/tmp/myExample/src'
-	
-	# Setup directories and prepare files
-	setup_directories(source, bak, dest, bak_src, bak_test, pathtests, pathsrc)
-	copy_and_prepare_files(bak, dest, bak_src, pathsrc, bak_test, pathtests)
-	
-	# Initialize Git and commit
-	initialize_git_repo(dest)
-	
-	# Display final message
-	displays_final_message()
+	try:
+		# Define paths
+		source = '/usr/share/doc/check-devel-0.9.9/example'
+		bak = '/home/raul/Repos/example-build'
+		bak_src = '/home/raul/Repos/example-build/src'
+		bak_test = '/home/raul/Repos/example-build/tests'
+		dest = '/home/raul/Repos/example'
+		pathtests = '/home/raul/Repos/example/tests'
+		pathsrc = '/home/raul/Repos/example/src'
+
+		# Setup directories and prepare files
+		setup_directories(source, bak, dest, bak_src, bak_test, pathtests, pathsrc)
+		copy_and_prepare_files(bak, dest, bak_src, pathsrc, bak_test, pathtests)
+
+		# Initialize Git and commit
+		initialize_git_repo(dest)
+
+		# Display final message
+		displays_final_message()
+	except ValueError as ve:
+		print(f"Caught a ValueError: {ve}")
+	except Exception as e:
+		print(f"An exception occurred: {e}")
+		# Optionally, re-raise the exception or log the error
+		# raise e
 	
 	
 if __name__ == "__main__":
