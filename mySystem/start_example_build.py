@@ -76,6 +76,7 @@ def main():
 
 		# Initialize Git and commit
 		initialize_git_repo(dest)
+		initialize_git_repo(bak)
 
 		# Display final message
 		displays_final_message()
