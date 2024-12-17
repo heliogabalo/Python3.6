@@ -74,11 +74,12 @@ def change_to_dir(directory):
 #####################################
 #							COPY									#
 #####################################
-def create_empty_file(fileName):
+def create_empty_file(*fileName):
 	'''Create a file only if it does not exist.'''
 	try:
-		with open(fileName, 'x') as f:
-			pass
+		for arg in fileName:
+			with open(arg, 'x') as f:
+				pass
 	except FileExistsError:
 		print("File already exist.")
 
