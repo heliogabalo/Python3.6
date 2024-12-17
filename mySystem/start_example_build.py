@@ -34,6 +34,11 @@ def copy_and_prepare_files(bak, dest, bak_src, pathsrc, bak_test, pathtests):
 	
 	# Create empty and combined source files
 	sh.create_empty_file(f"{pathsrc}/money.c")
+	sh.create_empty_file(f"{dest}/AUTHORS",
+											 f"{dest}/COPYING.LESSER",
+											 f"{dest}/NEWS",
+											 f"{dest}/ChangeLog",
+											 f"{dest}/README")
 	sh.cat_file(f"{bak_src}/money.1.h", f"{pathsrc}/money.h")
 	
 	# Prepare test files
