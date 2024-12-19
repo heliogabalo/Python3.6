@@ -23,7 +23,6 @@
 import subprocess
 
 
-
 def initialize_git_repo(directory):
 	'''Run "git init" in the specified directory.
 		 This function will initialize a git repository in the
@@ -59,6 +58,21 @@ def git_commit(message, directory):
 		print(f"Commit all staged work with message: {message}")
 	except subprocess.CalledProcessError as e:
 		print(f"Error trying to commit: {e}")
+
+
+def git_push(*repository, branch = "master"):
+	'''Automated pushes of defined repositories.'''
+	
+	for repo in repository:
+		print("Processing repository: {repo}")
+		try:
+			subprocess.run(["git", "push", "origin", branch], cwd=repo, check=True)
+			print(f"Pushing to repo: {repo}")
+		except subprocess.CalledProcessError as e:
+			print(f"Error pushing to {repo}: {e}")
+
+
+
 
 
 
