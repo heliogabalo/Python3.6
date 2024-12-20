@@ -64,7 +64,7 @@ def git_push(*repository, branch = "master"):
 	'''Automated pushes of defined repositories.'''
 	
 	for repo in repository:
-		print("Processing repository: {repo}")
+		print(f"Processing repository: {repo}")
 		try:
 			subprocess.run(["git", "push", "origin", branch], cwd=repo, check=True)
 			print(f"Pushing to repo: {repo}")
