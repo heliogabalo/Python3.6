@@ -166,6 +166,22 @@ def remove_directory(directory):
 	except Exception as e:
 		print(f"An unexpected Error occurred: {e}")
 
+
+def remove_files(directory):
+	'''Remove a list of files .'''
+	
+	files = glob.glob(f"{directory}/*money.[2-7].[c|h]")
+	
+	for file in files:
+		try:
+			os.remove(file)
+			print(f"File: {file} had been removed.")
+		except OSError as e:
+			print(f"Error deleting file {file}: {e}.")
+		except Exception as ex:
+			print(f"An unexpected Error occurred: {ex}")
+
+
 #####################################
 #							MISCELANEA						#
 #####################################
@@ -188,3 +204,14 @@ def colored_output():
 #print_pwd()
 #change_dir('linux/')
 #my_pydoc_pager('text texttexttext texttext\ntext texttexttext texttext ')
+#########################################
+import json
+
+def read_json(file_path):
+	with open(file_path, 'r') as file:
+	data = json.load(file)
+	
+	pretty_data = json.dumps(data, indent=2)	
+	print(pretty_data)
+	
+#########################################

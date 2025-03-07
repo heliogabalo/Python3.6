@@ -20,6 +20,7 @@ myPath = '/home/raul/Repos/ckb-next-master'
 
 # Working with source:
 sys.path.insert(0, '/home/raul/Documents/Python3.6/mySystem/')
+sys.path.insert(0, '/home/raul/Repos/ldd3/pci-watcher/.pci_watcher_env/lib/python3.6/site-packages/copilot_pci_watcher')
 #sys.path.insert(1, os.getcwd())
 
 # Kernel specific path. The working directory
@@ -31,5 +32,5 @@ sys.path.insert(0, '/home/raul/Documents/Python3.6/mySystem/')
 #print()
 
 # Automated starter for a global/general script
-cmd = 'python -B /home/raul/Documents/Python3.6/mySystem/.snippets.py -v'
+cmd = 'python -B /home/raul/Repos/Python3.6/mySystem/.snippets.py -v'
 
